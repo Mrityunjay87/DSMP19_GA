@@ -8,7 +8,7 @@ Created on Fri Mar 13 17:22:12 2020
 import statistics
 #from matplotlib import cm as cm
 
-path='C:/Users/mrityunjay1.pandey/GreyAtom/New folder/superhero.csv'
+path='C:/Users/mrityunjay1.pandey/GreyAtom/SuperHero Project/superhero.csv'
 
 #Task 1 - Data loading
 #Header files
@@ -47,7 +47,7 @@ plt.show()
 #With the plot it is eveident there would not be any difference even if the 'neutral' would have taken one side
 
 #Task 3 - Combat Correlation
-import statistics
+
 #Data slicing for 2 columns, strength and Combat
 sc_df=data[['Strength','Combat']]
 
@@ -89,5 +89,21 @@ super_best_names=super_best.Name.to_list()
 print("Top superheroes/villains are \n",super_best_names)
 
 #Task4
-fig,ax=plt.subplot(nrows=1,ncols=3,tight_layout=True)
+fig,(ax_1,ax_2,ax_3)=plt.subplots(nrows=1,ncols=3,tight_layout=True)
+
+# =============================================================================
+# import seaborn as sns
+# 
+# sns.boxplot(x=data.Intelligence,ax=ax_1,orient='v')
+# sns.boxplot(x=data.Speed,ax=ax_2,orient='v')
+# sns.boxplot(x=data.Power,ax=ax_3,orient='v')
+# =============================================================================
+ax_1.boxplot(x=data.Intelligence)
+ax_1.set_title('Intelligence')
+ax_2.boxplot(x=data.Speed)
+ax_2.set_title('Speed')
+ax_3.boxplot(x=data.Power)
+ax_3.set_title('Power')
+plt.show()
+
 
